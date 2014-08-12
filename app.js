@@ -49,7 +49,7 @@ var urlStream = fs.open( 'urls', 'r');
 while( ! urlStream.atEnd() ) {
   var url = urlStream.readLine();
   casper.echo( escapeUrlForDirectory(url));
-  getScreenshots(url);
+  //getScreenshots(url);
 }
 
 urlStream.close();
@@ -109,5 +109,5 @@ function wait(casper) {
  * @return string escaped string
  */
 function escapeUrlForDirectory(str) {
-  return str.replace(/^http[s]?:\/\/w{3}?\.?/,'').replace( /\//g, '-').replace(/-$/,'');
+  return str.replace(/^http[s]?:\/\/(?:w{3}.)?/,'').replace( /\//g, '-').replace(/-$/,'');
 }
