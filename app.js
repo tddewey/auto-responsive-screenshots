@@ -48,8 +48,8 @@ var urlStream = fs.open( 'urls', 'r');
 
 while( ! urlStream.atEnd() ) {
   var url = urlStream.readLine();
-  casper.echo( escapeUrlForDirectory(url));
-  //getScreenshots(url);
+  //casper.echo( escapeUrlForDirectory(url)); // debug
+  getScreenshots(url);
 }
 
 urlStream.close();
